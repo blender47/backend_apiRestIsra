@@ -19,7 +19,8 @@ app.use(
             return callback(
                 "Error de cors origin: " + origin + " No autorizado"
                 )
-        }
+        },
+        credentials: true,
 }))
 app.use(express.json())
 app.use(cookieParser())
