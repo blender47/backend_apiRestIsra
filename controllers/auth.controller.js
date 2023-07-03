@@ -30,7 +30,7 @@ export const login = async (req, res) =>{
         if(!user) return res.status(403).json({error: "No existe el usuario"})
         
         const respuestaPass = await user.comparePassword(password)
-        if(!respuestaPass) return res.status(403).json({error: "La contraseña que se introdujo es incoorectamente"})
+        if(!respuestaPass) return res.status(403).json({error: "La contraseña que se introdujo es incorrecta"})
 
         //generar JWT
         const {token, expiresIn} = generateToken(user.id)
